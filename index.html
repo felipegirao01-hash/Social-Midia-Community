@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <div class="sb-eyebrow">Social Media Community</div>
+    <div class="sb-title"><span>Social Media</span> Community</div>
+  </div>
+  <div class="sb-progress">
+    <div class="sb-prog-label"><span>Progresso</span><span id="progPct">0%</span></div>
+    <div class="sb-prog-bar"><div class="sb-prog-fill" id="progFill"></div></div>
+  </div>
+  <div class="sb-nav" id="sbNav"></div>
+</nav>
+
+<button class="mob-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- MAIN -->
+<main class="main" id="main">
+
+  <!-- HOME -->
+  <div id="page-home">
+    <div class="hero">
+      <div class="hero-noise"></div>
+      <div class="hero-lines"></div>
+      <div class="hero-content">
+        <div class="hero-badge">Social Media Community</div>
+        <h1><em>Social Media</em><br>Community</h1>
+        <p class="hero-desc">Se você está entrando agora no mercado digital, esse é o seu ponto de partida. Um mapa completo para entender como o universo do Social Media funciona — do básico à sua primeira oportunidade profissional.</p>
+        <div class="hero-pills">
+          <span class="hero-pill">Para Iniciantes</span>
+          <span class="hero-pill">7 Módulos</span>
+          <span class="hero-pill">35+ Aulas</span>
+          <span class="hero-pill">Gratuito</span>
+        </div>
+      </div>
+    </div>
+    <div class="home-modules" id="homeModules"></div>
+  </div>
+
+  <!-- MODULE PAGES geradas via JS -->
+  <div id="modPages"></div>
+
+  <!-- FINAL -->
+  <div id="page-final" style="display:none;">
+    <div class="final">
+      <h2>Parabéns.<br><em>Você chegou até aqui.</em></h2>
+      <p class="final-sub">Você terminou o seu mapa de entrada no mercado digital. Agora você sabe por onde começar, o que estudar e como dar os primeiros passos. O resto é execução.</p>
+      <div class="final-steps">
+        <div class="step"><span class="step-label">Essa semana</span><div class="step-title">Monte seu portfólio</div><p>Crie seu perfil profissional e organize um PDF com o trabalho que você já tem.</p></div>
+        <div class="step"><span class="step-label">Esse mês</span><div class="step-title">Primeiro cliente pago</div><p>Prospecte ativamente. Pode ser pequeno — o importante é começar a cobrar.</p></div>
+        <div class="step"><span class="step-label">Em 3 meses</span><div class="step-title">Projeto estruturado</div><p>2 clientes, 1 case documentado e sua proposta de consultoria pronta.</p></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+const MODULOS = [
+  {
+    id:'m1', num:'01', titulo:'Fundamentos de Marketing Digital',
+    desc:'A base estratégica que separa quem posta de quem comunica de verdade.',
+    chips:['6 aulas','Estratégia','Fundamentos'],
+    aulas:[
+      {
+        t:'O que é Marketing Digital?',
+        c:`<p>Antes de qualquer ferramenta, você precisa entender o <strong>raciocínio por trás de tudo</strong>.</p>
+<div class="ql"><p>"Conectar a pessoa certa, com a mensagem certa, na hora certa."</p></div>
+<p>Antes da internet, marketing era feito por TV, rádio e jornal. O problema? Era caro, impreciso e impossível de medir. Com o digital, tudo mudou:</p>
+<ul class="bl">
+  <li>Você fala <strong>exatamente</strong> com quem quer</li>
+  <li>Gasta <strong>muito menos</strong> do que mídias tradicionais</li>
+  <li>Consegue <strong>medir tudo</strong> em tempo real</li>
+</ul>
+<h3>O conceito mais importante</h3>
+<p>Ninguém acorda querendo comprar um produto. As pessoas acordam com <strong>problemas, desejos e sonhos</strong>. O marketing conecta o que você oferece a isso.</p>
+<div class="info-box"><div class="info-box-label">💡 Ponto prático</div><p>Quando você sobe um corte de vídeo, uma frase impactante ou um conteúdo de valor para o seu cliente — você está fazendo marketing digital. Mensagem certa, formato certo, audiência certa.</p></div>`
+      },
+      {
+        t:'Persona: com quem você está falando?',
+        c:`<p>Persona é a <strong>representação fictícia do cliente ideal</strong>. Um personagem que representa exatamente a pessoa que você quer atingir.</p>
+<div class="ql"><p>"Marketing que fala pra todo mundo não fala pra ninguém."</p></div>
+<h3>Como montar uma Persona</h3>
+<ul class="bl">
+  <li><strong>Informações básicas:</strong> Nome fictício, idade, cidade, profissão, renda aproximada</li>
+  <li><strong>Comportamento digital:</strong> Quais redes usa? Que conteúdo consome? Em que horário fica no celular?</li>
+  <li><strong>Dores e desejos:</strong> Qual o maior problema? O que ela sonha? O que a impede de avançar?</li>
+</ul>
+<h3>Exemplo de Persona</h3>
+<table class="tb">
+  <tr><th>Atributo</th><th>Descrição</th></tr>
+  <tr><td>Perfil</td><td>38 anos, casada, 2 filhos, assistente administrativa</td></tr>
+  <tr><td>Comportamento digital</td><td>Instagram e YouTube todo dia — manhã e noite</td></tr>
+  <tr><td>Dor principal</td><td>Perdeu o entusiasmo, quer inspiração para o dia a dia</td></tr>
+  <tr><td>Desejo</td><td>Conteúdo que faça sentido para a sua rotina real</td></tr>
+</table>
+<h3>O que muda na prática</h3>
+<p>Com a persona definida você sabe quando postar, que tom usar, que assuntos abordar e o que evitar. <strong>Sem persona, você produz no escuro.</strong></p>`
+      },
+      {
+        t:'Jornada do Cliente',
+        c:`<p>É o <strong>caminho que uma pessoa percorre</strong> — do momento que nem te conhece até se tornar fã e te indicar. Ninguém compra de uma vez. Existe um processo.</p>
+<h3>As 4 Etapas</h3>
+<table class="tb">
+  <tr><th>Etapa</th><th>O que acontece</th><th>Objetivo do conteúdo</th></tr>
+  <tr><td><span class="tag tag-o">Descoberta</span></td><td>A pessoa te encontra por acaso</td><td>Chamar atenção, despertar curiosidade</td></tr>
+  <tr><td><span class="tag tag-b">Reconhecimento</span></td><td>Percebe que tem uma dor</td><td>Gerar identificação e confiança</td></tr>
+  <tr><td><span class="tag tag-y">Consideração</span></td><td>Considera te contratar</td><td>Mostrar autoridade e provas</td></tr>
+  <tr><td><span class="tag tag-g">Decisão</span></td><td>Toma a decisão e age</td><td>Facilitar a ação com CTA claro</td></tr>
+</table>
+<div class="info-box"><div class="info-box-label">⚠️ Erro mais comum</div><p>A maioria dos perfis só produz conteúdo para quem <strong>já está dentro</strong> — etapas 3 e 4. Quando você entende a jornada, cria conteúdo que atrai pessoas novas — etapas 1 e 2. Isso faz o perfil crescer de verdade.</p></div>`
+      },
+      {
+        t:'Funil de Vendas',
+        c:`<p>É a <strong>representação visual da jornada</strong>. Chama-se funil porque entra muita gente em cima e vai afunilando até as pessoas que convertem. Isso é normal — o objetivo é trabalhar bem cada etapa.</p>
+<table class="tb">
+  <tr><th>Etapa</th><th>Sigla</th><th>Público</th><th>Conteúdo ideal</th></tr>
+  <tr><td>Topo</td><td><span class="tag tag-o">ToFu</span></td><td>Muitos, baixo relacionamento</td><td>Reels, frases, vídeos curtos, memes</td></tr>
+  <tr><td>Meio</td><td><span class="tag tag-b">MoFu</span></td><td>Médio, crescendo</td><td>Carrosséis, bastidores, lives, tutoriais</td></tr>
+  <tr><td>Fundo</td><td><span class="tag tag-g">BoFu</span></td><td>Poucos, alto relacionamento</td><td>CTA direto, depoimentos, oferta</td></tr>
+</table>
+<div class="ql"><p>"Erro clássico: só produzir conteúdo de fundo de funil. Resultado? O perfil nunca cresce."</p></div>
+<p>Apresentar o funil para um cliente é uma das suas <strong>maiores entregas</strong> — mostrar que eles precisam de conteúdo para cada etapa.</p>`
+      },
+      {
+        t:'Orgânico x Pago',
+        c:`<p><strong>Tráfego</strong> é o fluxo de pessoas que chegam até um perfil. Duas formas de gerar:</p>
+<table class="tb">
+  <tr><th></th><th>Orgânico</th><th>Pago</th></tr>
+  <tr><td><b>O que é</b></td><td>Pessoas te encontram sem investimento</td><td>Você paga para distribuir o conteúdo</td></tr>
+  <tr><td><b>Vantagem</b></td><td>Custo zero, audiência fiel, autoridade</td><td>Resultado imediato, segmentação precisa</td></tr>
+  <tr><td><b>Desvantagem</b></td><td>Resultado lento, depende do algoritmo</td><td>Para quando o dinheiro acaba</td></tr>
+  <tr><td><b>Canais</b></td><td>Feed, Reels, busca, indicação</td><td>Meta Ads, Google Ads, TikTok Ads</td></tr>
+</table>
+<div class="ql"><p>"Orgânico é como uma plantação — demora, mas é sustentável. Pago é como um cano de água — enquanto está aberto, a água flui."</p></div>
+<p>O ideal é usar os dois juntos. O pago traz resultado rápido enquanto o orgânico é construído.</p>`
+      },
+      {
+        t:'Como Funciona o Algoritmo?',
+        c:`<p>Algoritmo é o <strong>sistema inteligente</strong> das redes que decide quem vai ver o quê. Missão: manter o usuário o máximo de tempo possível dentro da plataforma.</p>
+<h3>Como ele avalia seu conteúdo</h3>
+<ul class="bl">
+  <li><strong>Entrega para uma amostra pequena</strong> — testa com poucos seguidores primeiro</li>
+  <li><strong>Mede o desempenho</strong> — as pessoas pararam? Assistiram até o fim? Compartilharam?</li>
+  <li><strong>Decide se amplifica</strong> — bom desempenho = mais entrega</li>
+</ul>
+<h3>O que o algoritmo valoriza</h3>
+<table class="tb">
+  <tr><th>Fator</th><th>Por que importa</th></tr>
+  <tr><td>Tempo de visualização</td><td>Quanto mais tempo, mais relevante o conteúdo parece</td></tr>
+  <tr><td>Compartilhamentos</td><td>O mais poderoso — leva para audiência nova</td></tr>
+  <tr><td>Salvamentos</td><td>Sinal forte de conteúdo muito relevante</td></tr>
+  <tr><td>Consistência</td><td>Perfis regulares recebem mais distribuição</td></tr>
+</table>
+<h3>Por plataforma</h3>
+<div class="grid4">
+  <div class="box"><span class="box-icon">📸</span><div class="box-title">Instagram</div><div class="box-desc">Prioriza Reels. Salvar e compartilhar valem mais que curtir.</div></div>
+  <div class="box"><span class="box-icon">▶️</span><div class="box-title">YouTube</div><div class="box-desc">Tempo de visualização é o rei. CTR da thumbnail é crítico.</div></div>
+  <div class="box"><span class="box-icon">🎵</span><div class="box-title">TikTok</div><div class="box-desc">O mais democrático. Qualquer perfil pode viralizar.</div></div>
+  <div class="box"><span class="box-icon">👥</span><div class="box-title">Facebook</div><div class="box-desc">Alcance orgânico caiu. Grupos e comunidades ainda funcionam.</div></div>
+</div>
+<div class="ql"><p>"Não crie conteúdo para agradar o algoritmo. Crie para sua persona — o algoritmo vem como consequência."</p></div>`
+      }
+    ]
+  },
+  {
+    id:'m2', num:'02', titulo:'Produção de Conteúdo',
+    desc:'Como criar conteúdo que para o scroll, gera conexão e move pessoas.',
+    chips:['5 aulas','Criação','Copy','Design','Vídeo'],
+    aulas:[
+      {
+        t:'O que é Conteúdo Estratégico?',
+        c:`<p>Conteúdo estratégico é qualquer material produzido com um <strong>objetivo claro</strong> — atrair, engajar, converter ou fidelizar. Não é postar por postar.</p>
+<div class="ql"><p>"Amador posta o que aparece. Profissional posta o que planejou."</p></div>
+<h3>Os 4 Pilares do Conteúdo</h3>
+<table class="tb">
+  <tr><th>Pilar</th><th>Objetivo</th><th>Exemplo prático</th></tr>
+  <tr><td><span class="tag tag-o">Educar</span></td><td>Gera autoridade e confiança</td><td>"3 erros que negócios cometem nas redes"</td></tr>
+  <tr><td><span class="tag tag-b">Entreter</span></td><td>Prende atenção, aumenta alcance</td><td>Bastidor descontraído, momento inusitado</td></tr>
+  <tr><td><span class="tag tag-g">Inspirar</span></td><td>Gera emoção e compartilhamento</td><td>História real, resultado, frase impactante</td></tr>
+  <tr><td><span class="tag tag-y">Converter</span></td><td>Chama para uma ação</td><td>Convite, oferta, link, DM, WhatsApp</td></tr>
+</table>
+<h3>Proporção recomendada</h3>
+<ul class="bl">
+  <li><strong>40%</strong> Educar</li>
+  <li><strong>30%</strong> Inspirar</li>
+  <li><strong>20%</strong> Entreter</li>
+  <li><strong>10%</strong> Converter</li>
+</ul>
+<div class="info-box"><div class="info-box-label">💡 Pergunta obrigatória antes de criar</div><p>Esse conteúdo serve pra quem? Em que etapa da jornada essa pessoa está? Qual é o objetivo desse post? Se você não consegue responder — ainda não está pronto para criar.</p></div>`
+      },
+      {
+        t:'Copywriting: Escrever pra Engajar',
+        c:`<p>Copy é a <strong>arte de escrever com intenção</strong>. Não é escrever bonito — é escrever de um jeito que provoca uma reação: parar, curtir, comentar, compartilhar, clicar, comprar.</p>
+<div class="ql"><p>"As pessoas não compram produtos. Elas compram transformações."</p></div>
+<h3>As 3 Partes de um Bom Copy</h3>
+<ul class="bl">
+  <li><strong>Gancho:</strong> Para o scroll. É a primeira linha, o primeiro segundo do vídeo. Gera curiosidade, provoca identificação ou causa impacto emocional imediato.</li>
+  <li><strong>Corpo:</strong> Desenvolve e gera valor. Direto, fluido, relevante. Use perguntas e conte histórias — narrativa prende mais que informação.</li>
+  <li><strong>CTA (Call To Action):</strong> Chama para uma ação específica. Diga exatamente o que quer que a pessoa faça.</li>
+</ul>
+<h3>Fórmulas que Funcionam</h3>
+<table class="tb">
+  <tr><th>Fórmula</th><th>Exemplo</th></tr>
+  <tr><td>Dor → Solução</td><td>"Seu perfil não cresce? O problema pode ser esse aqui."</td></tr>
+  <tr><td>Curiosidade</td><td>"O erro que 90% dos negócios cometem nas redes."</td></tr>
+  <tr><td>Identificação</td><td>"Se você já sentiu que seu esforço não está dando resultado, esse post é pra você."</td></tr>
+  <tr><td>Transformação</td><td>"Como saí de 200 para 2.000 seguidores em 3 meses sem investir nada."</td></tr>
+</table>
+<h3>Exemplo Antes e Depois</h3>
+<div class="vs">
+  <div class="vs-box"><div class="vs-label bad">❌ Sem copy</div><p>"Mensagem de hoje. Que tenha um ótimo dia! #motivação #inspiração"</p></div>
+  <div class="vs-box"><div class="vs-label good">✅ Com copy</div><p>"Tem dias que a vida pesa mais do que o normal.<br><br>Você carrega responsabilidades, cansaço — e ainda tenta manter o ritmo.<br><br>Mas deixa eu te falar uma coisa que mudou tudo.<br><br>👇 Assiste até o final."</p></div>
+</div>`
+      },
+      {
+        t:'Design: Artes que Param o Scroll',
+        c:`<p>Design não é sobre ser bonito. Uma arte boa é aquela que faz a pessoa <strong>parar, olhar e agir</strong>.</p>
+<h3>Os 5 Princípios Básicos</h3>
+<ul class="bl">
+  <li><strong>Hierarquia Visual:</strong> O mais importante aparece maior e mais destacado. Guie o olhar.</li>
+  <li><strong>Contraste:</strong> Faz elementos se destacarem. Sem contraste, tudo vira massa visual confusa.</li>
+  <li><strong>Espaço em Branco:</strong> Não é desperdício — é respiração visual. Direciona o foco.</li>
+  <li><strong>Tipografia:</strong> A fonte comunica antes de a pessoa ler a palavra. Use no máximo 2 fontes por arte.</li>
+  <li><strong>Paleta de Cores:</strong> 3 cores fixas — primária, secundária e neutra. Use sempre as mesmas para criar identidade.</li>
+</ul>
+<h3>Psicologia das Cores</h3>
+<table class="tb">
+  <tr><th>Cor</th><th>Transmite</th></tr>
+  <tr><td>Azul</td><td>Confiança, calma, profissionalismo</td></tr>
+  <tr><td>Vermelho</td><td>Urgência, energia, paixão</td></tr>
+  <tr><td>Dourado / Amarelo</td><td>Otimismo, realeza, abundância</td></tr>
+  <tr><td>Verde</td><td>Vida, esperança, crescimento</td></tr>
+  <tr><td>Roxo</td><td>Criatividade, espiritualidade, nobreza</td></tr>
+  <tr><td>Preto</td><td>Elegância, poder, sofisticação</td></tr>
+</table>
+<h3>Ferramentas Recomendadas</h3>
+<div class="grid3">
+  <div class="box"><span class="box-icon">🎨</span><div class="box-title">Canva</div><div class="box-desc">Comece aqui. Gratuito, intuitivo. Cobre 90% das necessidades.</div></div>
+  <div class="box"><span class="box-icon">⚡</span><div class="box-title">Adobe Express</div><div class="box-desc">Alternativa gratuita ao Canva. Boa integração com outros produtos Adobe.</div></div>
+  <div class="box"><span class="box-icon">🖥️</span><div class="box-title">Photoshop</div><div class="box-desc">Evolução profissional. Controle total, maior curva de aprendizado.</div></div>
+</div>`
+      },
+      {
+        t:'Edição de Vídeo: O Básico que Você Precisa Saber',
+        c:`<p>Todas as plataformas priorizam vídeo. O algoritmo entrega mais vídeo do que qualquer outro formato porque ele <strong>prende atenção melhor</strong>.</p>
+<h3>Ferramentas por Nível</h3>
+<table class="tb">
+  <tr><th>Nível</th><th>Ferramenta</th><th>Por quê usar</th></tr>
+  <tr><td><span class="tag tag-o">Iniciante</span></td><td>CapCut</td><td>Gratuito, intuitivo, feito para redes. Legenda automática em segundos.</td></tr>
+  <tr><td><span class="tag tag-b">Intermediário</span></td><td>DaVinci Resolve</td><td>Gratuito e profissional. Correção de cor avançada.</td></tr>
+  <tr><td><span class="tag tag-g">Avançado</span></td><td>Adobe Premiere</td><td>Padrão da indústria. Integração com After Effects.</td></tr>
+</table>
+<h3>Os 5 Elementos de um Bom Vídeo</h3>
+<ul class="bl">
+  <li><strong>Gancho nos primeiros 3 segundos</strong> — se não prender, a pessoa passa. Comece no ponto mais impactante.</li>
+  <li><strong>Ritmo de corte</strong> — elimine espaços mortos e pausas. Se pode tirar 2 segundos sem perder informação — tira.</li>
+  <li><strong>Áudio limpo</strong> — áudio ruim destrói um vídeo bom. Invista em microfone antes da câmera.</li>
+  <li><strong>Legenda</strong> — mais de 80% assistem sem som. É obrigatória.</li>
+  <li><strong>Música de fundo</strong> — cria emoção. Use músicas liberadas para evitar problemas de direitos autorais.</li>
+</ul>
+<h3>Formatos Corretos por Plataforma</h3>
+<table class="tb">
+  <tr><th>Plataforma</th><th>Resolução</th><th>Proporção</th></tr>
+  <tr><td>Instagram Reels</td><td>1080p</td><td>9:16 vertical</td></tr>
+  <tr><td>Feed Instagram</td><td>1080p</td><td>1:1 ou 4:5</td></tr>
+  <tr><td>YouTube Shorts</td><td>1080p</td><td>9:16 vertical</td></tr>
+  <tr><td>YouTube</td><td>1080p ou 4K</td><td>16:9 horizontal</td></tr>
+  <tr><td>TikTok</td><td>1080p</td><td>9:16 vertical</td></tr>
+</table>`
+      },
+      {
+        t:'Fotografia Básica: Luz, Enquadramento e Composição',
+        c:`<p>Você não precisa ser fotógrafo profissional. Mas precisa saber o suficiente para <strong>orientar, reconhecer e selecionar</strong> boas fotos.</p>
+<div class="ql"><p>"O Social Media é o diretor. Mesmo que não segure a câmera, ele sabe o que quer."</p></div>
+<h3>Pilar 1 — Luz</h3>
+<ul class="bl">
+  <li><strong>Luz natural:</strong> a melhor e mais barata. Horário ideal = golden hour (nascer e pôr do sol)</li>
+  <li><strong>Luz artificial:</strong> ring light para rostos, softbox para ambientes maiores</li>
+  <li><strong>Regra:</strong> a luz deve vir de frente ou diagonal. Luz por trás = silhueta escura</li>
+</ul>
+<h3>Pilar 2 — Enquadramento</h3>
+<ul class="bl">
+  <li><strong>Regra dos terços:</strong> divida a imagem em grade 3x3. Posicione o sujeito nas interseções — não no centro</li>
+  <li><strong>Espaço de respiro:</strong> deixe espaço no lado para onde a pessoa está olhando</li>
+  <li><strong>Ângulos:</strong> altura dos olhos = natural; baixo pra cima = autoridade; cima pra baixo = intimidade</li>
+</ul>
+<h3>Pilar 3 — Composição</h3>
+<ul class="bl">
+  <li><strong>Linhas guia:</strong> use elementos do ambiente para guiar o olhar até o sujeito</li>
+  <li><strong>Profundidade de campo:</strong> fundo desfocado destaca o sujeito — use modo retrato</li>
+  <li><strong>Fundo limpo:</strong> sempre verifique o fundo antes de fotografar</li>
+</ul>
+<div class="info-box"><div class="info-box-label">🎯 Regra de ouro da edição</div><p>Edição boa é aquela que você não percebe. Se a pessoa fala "que edição bonita" — você exagerou. Se fala "que foto bonita" — você acertou.</p></div>`
+      }
+    ]
+  },
+  {
+    id:'m3', num:'03', titulo:'Gestão de Redes Sociais',
+    desc:'Processos, planejamento e organização para gerenciar perfis com consistência.',
+    chips:['4 aulas','Calendário','Métricas','Relatório'],
+    aulas:[
+      {
+        t:'Planejamento de Conteúdo e Calendário Editorial',
+        c:`<p>Calendário Editorial é o <strong>planejamento organizado</strong> de tudo que vai ser postado — com data, horário, formato, tema e objetivo de cada post.</p>
+<div class="ql"><p>"Amador posta quando lembra. Profissional posta quando planejou."</p></div>
+<h3>Frequência Ideal por Formato</h3>
+<table class="tb">
+  <tr><th>Formato</th><th>Frequência recomendada</th></tr>
+  <tr><td>Feed</td><td>3 a 4 vezes por semana</td></tr>
+  <tr><td>Reels</td><td>2 a 3 vezes por semana</td></tr>
+  <tr><td>Stories</td><td>Todos os dias</td></tr>
+  <tr><td>YouTube</td><td>1 vez por semana</td></tr>
+</table>
+<h3>Exemplo de Grade Semanal</h3>
+<table class="tb">
+  <tr><th>Dia</th><th>Tema fixo</th></tr>
+  <tr><td>Segunda</td><td>Motivação para a semana — frase ou reflexão</td></tr>
+  <tr><td>Terça</td><td>Conteúdo educativo — carrossel</td></tr>
+  <tr><td>Quarta</td><td>Conteúdo em vídeo — Reel</td></tr>
+  <tr><td>Quinta</td><td>Bastidor ou momento da equipe</td></tr>
+  <tr><td>Sexta</td><td>Convite ou CTA para o fim de semana</td></tr>
+  <tr><td>Domingo</td><td>Registro ou encerramento da semana</td></tr>
+</table>
+<h3>Ferramentas de Agendamento</h3>
+<ul class="bl">
+  <li><strong>Meta Business Suite</strong> — gratuito, agenda para Instagram e Facebook</li>
+  <li><strong>mLabs</strong> — pago, mais completo, relatórios integrados</li>
+  <li><strong>Later</strong> — boa interface visual, plano gratuito disponível</li>
+</ul>`
+      },
+      {
+        t:'Métricas: O que Medir e o que Fazer com os Dados',
+        c:`<p>Sem dados você trabalha no achismo. Com dados você toma decisão.</p>
+<div class="ql"><p>"Intuição cria conteúdo. Dados aperfeiçoam."</p></div>
+<table class="tb">
+  <tr><th>Métrica</th><th>O que mede</th><th>Por que importa</th></tr>
+  <tr><td>Alcance</td><td>Pessoas únicas que viram</td><td>Métrica de descoberta</td></tr>
+  <tr><td>Impressões</td><td>Total de exibições</td><td>Sempre maior que alcance</td></tr>
+  <tr><td>Engajamento</td><td>Soma de todas as interações</td><td>Métrica de conexão</td></tr>
+  <tr><td>Taxa de Engajamento</td><td>(Eng ÷ Alcance) × 100</td><td>Acima de 3% = bom; 6% = excelente</td></tr>
+  <tr><td>Salvamentos</td><td>Quem guardou o post</td><td>Sinal forte de conteúdo relevante</td></tr>
+  <tr><td>Compartilhamentos</td><td>Quem enviou para outros</td><td>O mais poderoso para crescimento orgânico</td></tr>
+</table>
+<h3>Métricas de Vídeo</h3>
+<ul class="bl">
+  <li><strong>Tempo médio de visualização</strong> — quanto tempo as pessoas assistem em média</li>
+  <li><strong>Taxa de retenção</strong> — porcentagem do vídeo assistida. Acima de 50% é muito bom</li>
+  <li><strong>Plays</strong> — quantas vezes o vídeo foi reproduzido</li>
+</ul>
+<div class="info-box"><div class="info-box-label">📊 Como usar na prática</div><p>Todo mês analise: qual conteúdo teve mais alcance e por quê? Qual teve mais engajamento? Qual horário performou melhor? O perfil cresceu? Com base nisso, faça mais do que funcionou e abandone o que não funcionou.</p></div>`
+      },
+      {
+        t:'Relatório de Resultados: Como Apresentar pro Cliente',
+        c:`<p>O relatório é o que <strong>justifica seu trabalho e seu salário</strong>. Sem ele, o cliente não enxerga valor. Com ele, você prova o que entregou e fideliza.</p>
+<h3>Estrutura do Relatório Mensal</h3>
+<ul class="bl">
+  <li><strong>Resumo executivo</strong> — visão geral em 3 a 5 linhas, linguagem simples e direta</li>
+  <li><strong>Crescimento de seguidores</strong> — início vs. fim do mês em número e porcentagem</li>
+  <li><strong>Alcance total</strong> — pessoas únicas impactadas no período</li>
+  <li><strong>Engajamento</strong> — total de interações e taxa média</li>
+  <li><strong>Top 3 conteúdos</strong> — prints dos que mais performaram com análise do porquê</li>
+  <li><strong>O que não funcionou</strong> — honestidade é diferencial profissional</li>
+  <li><strong>Estratégia para o próximo mês</strong> — ajustes, manutenções e oportunidades</li>
+</ul>
+<div class="info-box"><div class="info-box-label">💡 Dica de apresentação</div><p>O cliente não quer ler 10 páginas. Ele quer ver os números, entender o que significam e saber o que vem pela frente. Monte no Canva, Google Slides ou PowerPoint — visual, claro e objetivo.</p></div>`
+      },
+      {
+        t:'Gestão de Múltiplos Clientes',
+        c:`<p>Conforme você cresce, o desafio é gerenciar vários perfis sem perder qualidade. A resposta é <strong>organização</strong>.</p>
+<h3>Estrutura Recomendada</h3>
+<ul class="bl">
+  <li><strong>Pasta por cliente no Google Drive</strong> — identidade visual, calendário, artes, relatórios e senhas</li>
+  <li><strong>Notion ou Trello</strong> — visualize o status de cada entrega de cada cliente</li>
+  <li><strong>Blocos de tempo</strong> — cada bloco dedicado a um cliente. Não fique pulando entre perfis</li>
+</ul>
+<h3>Capacidade por Dedicação</h3>
+<table class="tb">
+  <tr><th>Dedicação</th><th>Clientes que você consegue atender</th></tr>
+  <tr><td>Meio período</td><td>2 a 3 clientes</td></tr>
+  <tr><td>Período integral</td><td>4 a 6 clientes</td></tr>
+  <tr><td>Com equipe</td><td>10 ou mais</td></tr>
+</table>`
+      }
+    ]
+  },
+  {
+    id:'m4', num:'04', titulo:'Análise de Resultados',
+    desc:'Como ler os dados, interpretar métricas e apresentar resultados de forma profissional.',
+    chips:['3 aulas','Insights','Analytics','Relatório'],
+    aulas:[
+      {
+        t:'Instagram Insights na Prática',
+        c:`<p>Acesse pelo menu do perfil em <strong>Insights</strong> ou clicando em qualquer post em "Ver insights". Disponível apenas para perfis profissionais e comerciais.</p>
+<h3>O que Analisar</h3>
+<ul class="bl">
+  <li><strong>Visão geral:</strong> contas alcançadas, contas com engajamento, total de seguidores</li>
+  <li><strong>Por post:</strong> alcance, impressões, curtidas, comentários, compartilhamentos, salvamentos</li>
+  <li><strong>Audiência:</strong> faixa etária, gênero, localização, horários de maior atividade</li>
+</ul>
+<h3>Como Usar na Prática</h3>
+<ul class="bl">
+  <li>Horários de maior atividade → defina quando postar para maximizar o alcance</li>
+  <li>Faixa etária e localização → valide se a persona bate com quem está seguindo</li>
+  <li>Posts com mais salvamentos e compartilhamentos → replique o formato e o tema</li>
+</ul>`
+      },
+      {
+        t:'YouTube Analytics na Prática',
+        c:`<p>O YouTube Analytics vai além de visualizações. As métricas aqui explicam <strong>por que um vídeo cresce</strong> — ou não.</p>
+<table class="tb">
+  <tr><th>Métrica</th><th>O que significa</th><th>Referência</th></tr>
+  <tr><td>Tempo de exibição</td><td>Total de horas assistidas no canal</td><td>A mais importante para o algoritmo</td></tr>
+  <tr><td>CTR</td><td>% que clicou na thumbnail</td><td>Abaixo de 2% = ruim; 5–10% = excelente</td></tr>
+  <tr><td>Retenção de audiência</td><td>Onde as pessoas param de assistir</td><td>Acima de 50% é muito bom</td></tr>
+  <tr><td>Fonte de tráfego</td><td>Como chegaram até o vídeo</td><td>Busca, sugestão, externo, direto</td></tr>
+</table>
+<div class="ql"><p>"Uma thumbnail ruim mata um vídeo bom antes dele começar."</p></div>
+<p>Se existe uma queda brusca de retenção em determinado ponto — tem algo errado ali. Analise e corrija no próximo vídeo.</p>`
+      },
+      {
+        t:'Como Montar um Relatório Profissional',
+        c:`<p>Um relatório profissional diferencia um freela de uma agência. Ele mostra que você <strong>pensa estrategicamente</strong>, não só executa.</p>
+<table class="tb">
+  <tr><th>Seção</th><th>Conteúdo</th></tr>
+  <tr><td>Capa</td><td>Nome do cliente, período, seu nome ou logo</td></tr>
+  <tr><td>Resumo do mês</td><td>Principais números e conquistas em 3–5 linhas</td></tr>
+  <tr><td>Crescimento</td><td>Gráfico de evolução de seguidores mês a mês</td></tr>
+  <tr><td>Alcance e engajamento</td><td>Números com comparação ao mês anterior</td></tr>
+  <tr><td>Top conteúdos</td><td>Print dos 3 melhores com análise do porquê funcionou</td></tr>
+  <tr><td>Aprendizados</td><td>O que os dados ensinaram sobre a audiência</td></tr>
+  <tr><td>Próximos passos</td><td>Estratégia e ajustes para o próximo mês</td></tr>
+</table>
+<h3>Ferramentas</h3>
+<ul class="bl">
+  <li><strong>Canva</strong> — apresentação visual e profissional</li>
+  <li><strong>Google Slides</strong> — colaborativo e gratuito</li>
+  <li><strong>PowerPoint</strong> — clássico e aceito por qualquer cliente</li>
+</ul>`
+      }
+    ]
+  },
+  {
+    id:'m5', num:'05', titulo:'Tráfego Pago',
+    desc:'Meta Ads na prática: segmentação, criativos, orçamento e leitura de resultados.',
+    chips:['4 aulas','Meta Ads','Segmentação','ROI'],
+    aulas:[
+      {
+        t:'O que é Meta Ads e Como Funciona',
+        c:`<p>Meta Ads é a <strong>plataforma de anúncios do Facebook e Instagram</strong>. Você paga para distribuir seu conteúdo para um público específico — definido por você com precisão.</p>
+<h3>Tipos de Campanha</h3>
+<table class="tb">
+  <tr><th>Tipo</th><th>Objetivo</th><th>Métrica principal</th></tr>
+  <tr><td>Reconhecimento</td><td>Fazer mais gente conhecer o perfil</td><td>Alcance e impressões</td></tr>
+  <tr><td>Engajamento</td><td>Gerar curtidas, comentários e compartilhamentos</td><td>Interações</td></tr>
+  <tr><td>Tráfego</td><td>Levar pessoas para um link externo</td><td>Cliques</td></tr>
+  <tr><td>Conversão</td><td>Gerar ação específica (compra, cadastro)</td><td>Custo por resultado</td></tr>
+</table>
+<h3>Impulsionamento x Campanha</h3>
+<div class="vs">
+  <div class="vs-box"><div class="vs-label" style="color:var(--yellow)">Impulsionamento</div><p>Botão "promover" direto no post. Simples, rápido, limitado. Bom para começar e testar.</p></div>
+  <div class="vs-box"><div class="vs-label good">Gerenciador de Anúncios</div><p>Nível profissional. Mais controle, mais opções de segmentação, mais resultado.</p></div>
+</div>`
+      },
+      {
+        t:'Segmentação de Público',
+        c:`<p>Aqui está o maior diferencial do tráfego pago — você escolhe <strong>exatamente quem vai ver</strong> seu anúncio.</p>
+<table class="tb">
+  <tr><th>Tipo de público</th><th>Como funciona</th></tr>
+  <tr><td><span class="tag tag-o">Público principal</span></td><td>Você define manualmente: idade, localização, interesses e comportamentos</td></tr>
+  <tr><td><span class="tag tag-b">Público personalizado</span></td><td>Criado a partir de dados que você já tem: e-mails, visitantes do site, engajadores</td></tr>
+  <tr><td><span class="tag tag-g">Lookalike</span></td><td>O Meta encontra pessoas parecidas com seu público personalizado. Extremamente poderoso para escalar.</td></tr>
+</table>
+<div class="info-box"><div class="info-box-label">💡 Exemplo de segmentação</div><p>Mulheres e homens, 25 a 55 anos, Fortaleza, interessados em "empreendedorismo", "marketing digital", "desenvolvimento pessoal" — ou qualquer nicho específico do seu cliente.</p></div>`
+      },
+      {
+        t:'Criativo de Anúncio',
+        c:`<p>O criativo é a peça do anúncio — imagem ou vídeo que a pessoa vai ver. É responsável por <strong>70% do resultado</strong> de uma campanha.</p>
+<div class="ql"><p>"Você pode ter a melhor segmentação do mundo. Se o criativo for ruim, o anúncio não funciona."</p></div>
+<h3>O que Faz um Bom Criativo</h3>
+<ul class="bl">
+  <li><strong>Parecer orgânico</strong> — anúncio que parece anúncio é ignorado automaticamente</li>
+  <li><strong>Gancho forte</strong> — mesma regra do copy e do vídeo: os primeiros segundos são tudo</li>
+  <li><strong>Mensagem clara</strong> — uma mensagem por anúncio, sem tentar falar tudo de uma vez</li>
+  <li><strong>CTA explícito</strong> — diga exatamente o que a pessoa deve fazer: "Clique aqui", "Saiba mais", "Fale conosco"</li>
+</ul>`
+      },
+      {
+        t:'Orçamento e Resultados',
+        c:`<p>Não existe valor mínimo ideal — existe o <strong>valor certo para o objetivo certo</strong>.</p>
+<table class="tb">
+  <tr><th>Objetivo</th><th>Investimento mínimo sugerido</th></tr>
+  <tr><td>Testar um criativo</td><td>R$ 10 a R$ 20 por dia</td></tr>
+  <tr><td>Campanha de engajamento</td><td>R$ 15 a R$ 30 por dia</td></tr>
+  <tr><td>Campanha de conversão</td><td>R$ 30 a R$ 50 por dia</td></tr>
+</table>
+<h3>Métricas do Tráfego Pago</h3>
+<table class="tb">
+  <tr><th>Sigla</th><th>Nome</th><th>O que mede</th></tr>
+  <tr><td><span class="tag tag-o">CPM</span></td><td>Custo por mil impressões</td><td>Se seu público está caro ou barato</td></tr>
+  <tr><td><span class="tag tag-b">CPC</span></td><td>Custo por clique</td><td>Quanto custou cada clique</td></tr>
+  <tr><td><span class="tag tag-g">CTR</span></td><td>Taxa de clique</td><td>Abaixo de 1% = criativo precisa melhorar</td></tr>
+  <tr><td><span class="tag tag-y">CPR</span></td><td>Custo por resultado</td><td>Quanto custou cada lead ou venda</td></tr>
+</table>
+<div class="ql"><p>"Teste sempre. Nunca assuma que sabe o que vai funcionar. Deixa o dado te dizer — depois escala o vencedor."</p></div>`
+      }
+    ]
+  },
+  {
+    id:'m6', num:'06', titulo:'Portfólio e Precificação',
+    desc:'Como montar seu portfólio, precificar seus serviços e se posicionar no mercado.',
+    chips:['3 aulas','Portfólio','Precificação','Contrato'],
+    aulas:[
+      {
+        t:'Como Montar seu Portfólio do Zero',
+        c:`<p>O portfólio é sua <strong>prova social profissional</strong>. Antes de te contratar, o cliente quer ver o que você já fez. E você provavelmente já tem material — o que fez para seus primeiros clientes já é portfólio.</p>
+<h3>O que Incluir</h3>
+<ul class="bl">
+  <li><strong>Antes e depois</strong> — seguidores, alcance e engajamento antes vs. depois de você assumir</li>
+  <li><strong>Peças criadas</strong> — prints das melhores artes, carrosséis e posts produzidos</li>
+  <li><strong>Prints de métricas</strong> — alcance, engajamento e crescimento direto do Insights</li>
+  <li><strong>Depoimento do cliente</strong> — um print ou texto elogiando seu trabalho vale ouro</li>
+  <li><strong>Estratégias aplicadas</strong> — descreva brevemente o que fez e por quê funcionou</li>
+</ul>
+<h3>Formatos de Apresentação</h3>
+<ul class="bl">
+  <li><strong>PDF (comece aqui):</strong> simples, profissional, fácil de enviar. Monte no Canva.</li>
+  <li><strong>Site:</strong> mais impressionante. Use Notion, Wix ou WordPress.</li>
+  <li><strong>Instagram profissional:</strong> seu próprio perfil como social media.</li>
+</ul>
+<div class="info-box"><div class="info-box-label">💡 E se não tiver portfólio ainda?</div><p><strong>Opção 1:</strong> Use o que já fez — mesmo que tenha sido voluntário, o resultado é real.<br><br><strong>Opção 2:</strong> Crie cases fictícios — monte uma estratégia completa para um perfil que você admira. Isso demonstra competência mesmo sem cliente real.</p></div>`
+      },
+      {
+        t:'Precificação: Quanto Cobrar',
+        c:`<div class="ql"><p>"Preço baixo não atrai cliente bom. Atrai cliente problema."</p></div>
+<h3>Modelos de Precificação</h3>
+<ul class="bl">
+  <li><strong>Por pacote mensal:</strong> conjunto de serviços por um valor fixo. O mais comum e previsível para você e para o cliente.</li>
+  <li><strong>Por entrega:</strong> você cobra por post, arte ou vídeo. Bom para trabalhos pontuais.</li>
+  <li><strong>Por resultado:</strong> porcentagem sobre o resultado gerado. Mais avançado e arriscado.</li>
+</ul>
+<h3>Referência de Pacotes para Começar</h3>
+<table class="tb">
+  <tr><th>Pacote</th><th>Valor / mês</th><th>O que inclui</th></tr>
+  <tr><td><span class="tag tag-o">Básico</span></td><td>R$ 500 a R$ 800</td><td>12 posts, legendas, stories 3x/semana, 1 relatório</td></tr>
+  <tr><td><span class="tag tag-b">Intermediário</span></td><td>R$ 1.200 a R$ 2.000</td><td>16 posts, 8 Reels, stories diários, gestão de comentários, relatório</td></tr>
+  <tr><td><span class="tag tag-g">Completo</span></td><td>R$ 2.500 a R$ 4.000</td><td>Feed, Reels, stories, tráfego pago, relatório estratégico, reunião mensal</td></tr>
+</table>
+<p>Comece no básico. Entregue resultado. Aumente o preço no próximo contrato. Simples assim.</p>`
+      },
+      {
+        t:'Contrato e Profissionalismo',
+        c:`<p>Contrato protege <strong>você e o cliente</strong>. Define claramente o que está incluso, prazos e regras — sem margem para mal-entendidos.</p>
+<h3>O que Incluir no Contrato</h3>
+<ul class="bl">
+  <li>Serviços inclusos no pacote e o que <strong>não</strong> está incluso</li>
+  <li>Valor, forma e prazo de pagamento</li>
+  <li>Prazo de entrega das artes e prazo de aprovação pelo cliente</li>
+  <li>Regras de cancelamento e aviso prévio</li>
+  <li>Direitos sobre o conteúdo produzido</li>
+</ul>
+<h3>Ferramentas</h3>
+<ul class="bl">
+  <li><strong>Juridoc</strong> — modelos de contrato gratuitos para freelancers</li>
+  <li><strong>Google Docs</strong> — simples e fácil de assinar digitalmente</li>
+  <li><strong>DocuSign</strong> — assinatura digital profissional com validade jurídica</li>
+</ul>`
+      }
+    ]
+  },
+  {
+    id:'m7', num:'07', titulo:'Como Fechar Clientes',
+    desc:'Da prospecção à assinatura do contrato — o processo completo de captação.',
+    chips:['5 aulas','Prospecção','Abordagem','Proposta'],
+    aulas:[
+      {
+        t:'Onde Encontrar Clientes',
+        c:`<p>O primeiro cliente está <strong>mais perto do que você pensa</strong>. Antes de ir para o mercado — olhe ao redor. Quem você conhece que precisa de gestão de redes sociais?</p>
+<ul class="bl">
+  <li>Comércios locais do seu bairro ou cidade</li>
+  <li>Profissionais liberais — médicos, advogados, dentistas, coaches</li>
+  <li>Organizações, igrejas, associações, ONGs</li>
+  <li>Pequenos negócios da família ou de amigos próximos</li>
+</ul>
+<h3>Canais para Encontrar Clientes</h3>
+<table class="tb">
+  <tr><th>Canal</th><th>Como usar</th></tr>
+  <tr><td>Instagram profissional</td><td>Crie seu perfil. Poste sobre marketing digital. Clientes te encontram.</td></tr>
+  <tr><td>LinkedIn</td><td>Perfil atualizado com sua experiência. Conecte com empresários e líderes.</td></tr>
+  <tr><td>Indicação</td><td>O canal mais poderoso. Um cliente satisfeito indica dois.</td></tr>
+  <tr><td>Prospecção ativa</td><td>Identifique perfis que precisam de ajuda e entre em contato direto.</td></tr>
+</table>`
+      },
+      {
+        t:'Como Fazer a Abordagem',
+        c:`<p>A abordagem certa é a diferença entre ser ignorado e abrir uma conversa.</p>
+<div class="vs">
+  <div class="vs-box"><div class="vs-label bad">❌ Não funciona</div><p>"Oi, faço gestão de redes sociais, tenho interesse em trabalhar com você, qual seu orçamento?"<br><br>Fria, genérica e focada em você. Ninguém responde isso.</p></div>
+  <div class="vs-box"><div class="vs-label good">✅ Funciona</div><p>Antes de ofertar — <strong>entregue valor</strong>. Estude o perfil, faça um diagnóstico gratuito e aborde com ele em mãos.</p></div>
+</div>
+<h3>O Passo a Passo que Funciona</h3>
+<ul class="bl">
+  <li><strong>Passo 1 — Estude o perfil:</strong> analise o Instagram, o conteúdo e as métricas visíveis. Identifique o que está funcionando e o que pode melhorar.</li>
+  <li><strong>Passo 2 — Faça um diagnóstico gratuito:</strong> prepare uma análise rápida com 3 pontos de melhoria. Isso mostra competência antes de qualquer conversa sobre preço.</li>
+  <li><strong>Passo 3 — Aborde com o diagnóstico:</strong> "Identifiquei algumas oportunidades no seu perfil que poderiam aumentar significativamente seu alcance. Posso te enviar?"</li>
+</ul>`
+      },
+      {
+        t:'A Reunião de Apresentação',
+        c:`<p>O objetivo da reunião não é vender. É <strong>entender o cliente</strong> e mostrar que você entende o problema dele.</p>
+<div class="ql"><p>"Quem faz as perguntas certas parece mais inteligente do que quem fala muito."</p></div>
+<h3>Perguntas Essenciais</h3>
+<ul class="bl">
+  <li>Qual o objetivo principal das redes sociais para você?</li>
+  <li>Quem é seu público ideal?</li>
+  <li>O que você já tentou que funcionou? E o que não funcionou?</li>
+  <li>Qual resultado você esperaria ver em 3 meses?</li>
+  <li>Você já trabalhou com algum profissional de comunicação antes?</li>
+</ul>
+<p>Com as respostas — você monta uma proposta <strong>personalizada</strong>, não genérica. Isso é o que fecha contrato.</p>`
+      },
+      {
+        t:'A Proposta Comercial',
+        c:`<p>Uma boa proposta mostra que você <strong>entendeu o problema</strong> e tem a solução certa para ele.</p>
+<table class="tb">
+  <tr><th>Seção</th><th>Conteúdo</th></tr>
+  <tr><td>Diagnóstico</td><td>Mostra que você estudou o perfil e entendeu o problema</td></tr>
+  <tr><td>Solução</td><td>O que você vai fazer — descrito de forma clara e objetiva</td></tr>
+  <tr><td>Resultados esperados</td><td>O que o cliente pode esperar em 30, 60 e 90 dias</td></tr>
+  <tr><td>Investimento</td><td>O valor do pacote. Apresente como investimento, não como custo.</td></tr>
+  <tr><td>Próximos passos</td><td>O que acontece depois que ele disser sim</td></tr>
+</table>
+<div class="info-box"><div class="info-box-label">⚠️ Atenção</div><p>Seja realista nos resultados esperados. Não prometa o que não pode entregar. Prometer muito e entregar pouco destrói sua reputação. Prometer adequado e entregar mais fideliza para sempre.</p></div>`
+      },
+      {
+        t:'O Projeto de Comunicação para Organizações',
+        c:`<p>Esse é o seu <strong>produto especial</strong>. Você não chega como social media comum — você chega como <strong>consultor de comunicação</strong> que entende o ambiente por dentro e tem uma solução estruturada e escalável.</p>
+<h3>O que o Projeto Inclui</h3>
+<ul class="bl">
+  <li><strong>Diagnóstico da comunicação atual</strong> — como está o departamento hoje? Tem equipe? Processos? Identidade visual?</li>
+  <li><strong>Estruturação do departamento</strong> — setores ou células: operacional, design, redes sociais, planejamento estratégico</li>
+  <li><strong>Identidade visual</strong> — paleta de cores, fontes e estilo padronizado</li>
+  <li><strong>Estratégia de conteúdo</strong> — persona, calendário editorial, pilares de conteúdo, funil</li>
+  <li><strong>Treinamento da equipe</strong> — você capacita quem já está lá, não faz tudo sozinho</li>
+  <li><strong>Acompanhamento mensal</strong> — relatório, reunião estratégica e ajustes</li>
+</ul>
+<h3>Precificação do Projeto</h3>
+<table class="tb">
+  <tr><th>Serviço</th><th>Valor</th></tr>
+  <tr><td>Projeto inicial de implantação</td><td>R$ 1.500 a R$ 3.000</td></tr>
+  <tr><td>Acompanhamento mensal</td><td>R$ 800 a R$ 1.500 / mês</td></tr>
+</table>
+<h3>Como Chegar nos Clientes Certos</h3>
+<ul class="bl">
+  <li><strong>Pelo relacionamento</strong> — uma boa entrega gera indicação. Líderes conhecem líderes.</li>
+  <li><strong>Pelo projeto piloto</strong> — ofereça o primeiro mês a valor simbólico, entregue resultado e use como case</li>
+  <li><strong>Pela autoridade online</strong> — crie conteúdo sobre comunicação estratégica para organizações. Os clientes certos vão te encontrar.</li>
+</ul>
+<div class="ql"><p>"Você tem um diferencial que nenhuma agência tem: você conhece o ambiente por dentro. Isso vale mais do que qualquer certificado."</p></div>`
+      }
+    ]
+  }
+];
+
+// ── BUILD SIDEBAR ──
+function buildSidebar(){
+  const nav = document.getElementById('sbNav');
+  MODULOS.forEach((mod, mi) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'sb-mod';
+    const head = document.createElement('div');
+    head.className = 'sb-mod-head';
+    head.id = `sbh-${mi}`;
+    head.innerHTML = `<div class="sb-mod-n">${mod.num}</div><div class="sb-mod-label">${mod.titulo}</div><span class="sb-mod-arrow">▶</span>`;
+    const list = document.createElement('div');
+    list.className = 'sb-aulas';
+    list.id = `sbal-${mi}`;
+    mod.aulas.forEach((aula, ai) => {
+      const a = document.createElement('div');
+      a.className = 'sb-aula';
+      a.id = `sba-${mi}-${ai}`;
+      a.textContent = aula.t;
+      a.onclick = (e) => {
+        e.stopPropagation();
+        showMod(mi);
+        setTimeout(() => openLesson(mi, ai), 50);
+        if(window.innerWidth<=860) document.getElementById('sidebar').classList.remove('open');
+      };
+      list.appendChild(a);
+    });
+    head.onclick = () => {
+      const open = list.classList.contains('open');
+      list.classList.toggle('open', !open);
+      head.classList.toggle('open', !open);
+      if(!open) showMod(mi);
+    };
+    wrap.appendChild(head); wrap.appendChild(list);
+    nav.appendChild(wrap);
+  });
+}
+
+// ── BUILD HOME CARDS ──
+function buildHome(){
+  const area = document.getElementById('homeModules');
+  MODULOS.forEach((mod, mi) => {
+    const card = document.createElement('div');
+    card.className = 'mod-card';
+    card.innerHTML = `
+      <div class="mc-num">Módulo ${mod.num}</div>
+      <div class="mc-title">${mod.titulo}</div>
+      <div class="mc-desc">${mod.desc}</div>
+      <div class="mc-chips">${mod.chips.map(c=>`<span class="mc-chip">${c}</span>`).join('')}</div>
+      <span class="mc-arrow">→</span>
+    `;
+    card.onclick = () => showMod(mi);
+    area.appendChild(card);
+  });
+}
+
+// ── BUILD MOD PAGES ──
+function buildModPages(){
+  const area = document.getElementById('modPages');
+  MODULOS.forEach((mod, mi) => {
+    const page = document.createElement('div');
+    page.className = 'mod-page';
+    page.id = `mod-${mi}`;
+
+    const prevBtn = mi > 0 ? `<a class="btn-nav" onclick="showMod(${mi-1})">← Módulo ${MODULOS[mi-1].num}</a>` : `<a class="btn-nav" onclick="showHome()">← Início</a>`;
+    const nextBtn = mi < MODULOS.length-1 ? `<a class="btn-nav primary" onclick="showMod(${mi+1})">Módulo ${MODULOS[mi+1].num} →</a>` : `<a class="btn-nav primary" onclick="showFinal()">Concluir Curso →</a>`;
+
+    let lessonsHtml = '';
+    mod.aulas.forEach((aula, ai) => {
+      lessonsHtml += `
+        <div class="lesson" id="lesson-${mi}-${ai}">
+          <div class="lesson-head" id="lh-${mi}-${ai}" onclick="toggleLesson(${mi},${ai})">
+            <div class="lesson-n">Aula ${String(ai+1).padStart(2,'0')}</div>
+            <div class="lesson-title">${aula.t}</div>
+            <span class="lesson-icon">▼</span>
+          </div>
+          <div class="lesson-body" id="lb-${mi}-${ai}">${aula.c}</div>
+        </div>`;
+    });
+
+    page.innerHTML = `
+      <div class="mod-hero">
+        <div class="mod-hero-bg"></div>
+        <div class="mod-eyebrow">Módulo ${mod.num} · ${mod.aulas.length} aulas</div>
+        <div class="mod-h1">${mod.titulo}</div>
+        <p style="font-size:14px;color:var(--text2);margin-top:10px;">${mod.desc}</p>
+        <div class="mod-meta">${mod.chips.map(c=>`<span class="mod-chip">${c}</span>`).join('')}</div>
+      </div>
+      <div class="lessons">${lessonsHtml}</div>
+      <div class="bottom-nav">${prevBtn}${nextBtn}</div>
+    `;
+    area.appendChild(page);
+  });
+}
+
+// ── NAVIGATION ──
+let currentMod = null;
+let openedLessons = new Set();
+
+function hideAll(){
+  document.getElementById('page-home').style.display = 'none';
+  document.getElementById('page-final').style.display = 'none';
+  document.querySelectorAll('.mod-page').forEach(p => p.classList.remove('active'));
+}
+
+function showHome(){
+  hideAll();
+  document.getElementById('page-home').style.display = 'block';
+  window.scrollTo(0,0);
+  currentMod = null;
+  updateSbActive(-1);
+}
+
+function showMod(mi){
+  hideAll();
+  const page = document.getElementById(`mod-${mi}`);
+  page.classList.add('active');
+  window.scrollTo(0,0);
+  currentMod = mi;
+  updateSbActive(mi);
+  // expand sidebar for this module
+  const list = document.getElementById(`sbal-${mi}`);
+  const head = document.getElementById(`sbh-${mi}`);
+  document.querySelectorAll('.sb-aulas').forEach(l => l.classList.remove('open'));
+  document.querySelectorAll('.sb-mod-head').forEach(h => h.classList.remove('open','active'));
+  list.classList.add('open');
+  head.classList.add('open','active');
+}
+
+function showFinal(){
+  hideAll();
+  document.getElementById('page-final').style.display = 'block';
+  window.scrollTo(0,0);
+}
+
+function updateSbActive(mi){
+  document.querySelectorAll('.sb-mod-n').forEach(n => {
+    n.closest('.sb-mod-head').classList.remove('active');
+  });
+  if(mi >= 0){
+    document.getElementById(`sbh-${mi}`).classList.add('active');
+  }
+}
+
+function toggleLesson(mi, ai){
+  const head = document.getElementById(`lh-${mi}-${ai}`);
+  const body = document.getElementById(`lb-${mi}-${ai}`);
+  const isOpen = body.classList.contains('open');
+  head.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+  const key = `${mi}-${ai}`;
+  if(!isOpen) openedLessons.add(key); else openedLessons.delete(key);
+  // update sidebar aula
+  const sba = document.getElementById(`sba-${mi}-${ai}`);
+  if(sba) sba.classList.toggle('done', !isOpen);
+  updateProgress();
+}
+
+function openLesson(mi, ai){
+  const head = document.getElementById(`lh-${mi}-${ai}`);
+  const body = document.getElementById(`lb-${mi}-${ai}`);
+  if(!body.classList.contains('open')){
+    head.classList.add('open');
+    body.classList.add('open');
+    openedLessons.add(`${mi}-${ai}`);
+    const sba = document.getElementById(`sba-${mi}-${ai}`);
+    if(sba) sba.classList.add('done');
+    updateProgress();
+  }
+  setTimeout(() => {
+    document.getElementById(`lesson-${mi}-${ai}`).scrollIntoView({behavior:'smooth',block:'start'});
+  }, 100);
+}
+
+function updateProgress(){
+  const total = MODULOS.reduce((s,m) => s + m.aulas.length, 0);
+  const done = openedLessons.size;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progPct').textContent = pct + '%';
+}
+
+// ── INIT ──
+buildSidebar();
+buildHome();
+buildModPages();
+</script>
+
+<style>
+.footer{
+  border-top:1px solid var(--border);
+  padding:40px 64px;
+  background:var(--surface);
+}
+.footer-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:32px;flex-wrap:wrap;margin-bottom:28px;
+}
+.footer-brand .fb-name{
+  font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;
+  color:var(--white);margin-bottom:4px;
+}
+.footer-brand .fb-name span{color:var(--accent);}
+.footer-brand .fb-sub{font-size:12px;color:var(--text3);}
+.footer-terms{max-width:520px;}
+.footer-terms h4{
+  font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+  margin-bottom:10px;
+}
+.footer-terms p{font-size:12px;color:var(--text2);line-height:1.8;margin-bottom:8px;}
+.footer-terms p:last-child{margin-bottom:0;}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+  padding-top:20px;border-top:1px solid var(--border);
+}
+.footer-copy{font-size:11px;color:var(--text3);}
+.footer-copy span{color:var(--accent);}
+.footer-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,77,0,.06);border:1px solid rgba(255,77,0,.15);
+  padding:4px 12px;border-radius:100px;
+  font-size:10px;font-weight:600;color:var(--text3);
+  letter-spacing:1px;
+}
+.footer-badge em{font-style:normal;color:var(--accent);}
+@media(max-width:860px){
+  .footer{padding:32px 20px;}
+  .footer-top{flex-direction:column;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+}
+</style>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fb-name"><span>Social Media</span> Community</div>
+      <div class="fb-sub">por Felipe Nascimento Girão</div>
+    </div>
+    <div class="footer-terms">
+      <h4>Termos de Uso</h4>
+      <p>Este material é de autoria exclusiva de <strong style="color:var(--white)">Felipe Nascimento Girão</strong> e está protegido pela Lei de Direitos Autorais nº 9.610/98. A distribuição gratuita não implica cessão de direitos.</p>
+      <p>É permitido: compartilhar o link de acesso, utilizar o conteúdo para aprendizado pessoal e citar trechos com devida atribuição ao autor.</p>
+      <p>É proibido: reproduzir, copiar, vender, redistribuir ou adaptar este material — no todo ou em parte — sem autorização prévia e por escrito do autor.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      © <span id="footerYear"></span> <span>Felipe Nascimento Girão</span> · Todos os direitos reservados · Fortaleza, CE — Brasil
+    </div>
+
+  </div>
+</footer>
+
+<script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>
